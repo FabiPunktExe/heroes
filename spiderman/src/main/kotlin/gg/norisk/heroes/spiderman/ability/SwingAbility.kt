@@ -32,7 +32,7 @@ val webShootPower = NumberProperty(1.0, 3, "Web shoot power", AddValueTotal(1.4,
 }
 
 @OptIn(ExperimentalSilkApi::class)
-object WebShootAbility : PressAbility("Web Shoot") {
+object SwingAbility : PressAbility("Swing") {
     init {
         client {
             keyBind = HeroKeyBindings.firstKeyBind

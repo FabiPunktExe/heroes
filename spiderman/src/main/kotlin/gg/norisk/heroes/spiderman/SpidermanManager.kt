@@ -2,7 +2,7 @@ package gg.norisk.heroes.spiderman
 
 import gg.norisk.heroes.common.hero.Hero
 import gg.norisk.heroes.common.hero.HeroManager.registerHero
-import gg.norisk.heroes.spiderman.ability.WebShootAbility
+import gg.norisk.heroes.spiderman.ability.SwingAbility
 import gg.norisk.heroes.spiderman.registry.EntityRegistry
 import gg.norisk.heroes.spiderman.registry.EntityRendererRegistry
 import net.fabricmc.api.ClientModInitializer
@@ -36,6 +36,6 @@ object SpidermanManager : ModInitializer, ClientModInitializer, DedicatedServerM
 
     val Spiderman by Hero("Spiderman") {
         color = Color.RED.rgb
-        ability(WebShootAbility)
+        ability(SwingAbility)
     }
 }
