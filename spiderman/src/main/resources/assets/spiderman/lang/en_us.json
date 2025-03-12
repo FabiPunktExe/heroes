@@ -4,5 +4,7 @@
   "heroes.property.web_shoot_power": "Web shoot power",
   "heroes.property.web_shoot_power.description": "The shooting power.",
   "heroes.property.rope_length": "Web rope length",
-  "heroes.property.rope_length.description": "The length of your web rope."
+  "heroes.property.rope_length.description": "The length of your web rope.",
+  "hero.spiderman.ability.throw_webs.description": "Throw cobwebs.",
+  "heroes.property.web_amount": "Amount"
 }

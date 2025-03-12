@@ -4,5 +4,7 @@
   "heroes.property.web_shoot_power": "Schusskraft",
   "heroes.property.web_shoot_power.description": "Die Kraft, mit der zu das Netz schießt.",
   "heroes.property.rope_length": "Netzlänge",
-  "heroes.property.rope_length.description": "Die Länge deines Netzes."
+  "heroes.property.rope_length.description": "Die Länge deines Netzes.",
+  "hero.spiderman.ability.throw_webs.description": "Werfe Spinnennetze.",
+  "heroes.property.web_amount": "Menge"
 }
