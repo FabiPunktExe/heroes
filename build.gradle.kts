@@ -93,17 +93,6 @@ subprojects {
   apply(plugin = "kotlin")
   apply(plugin = "org.jetbrains.kotlin.plugin.serialization")
 
-  //ich weiß das ist kriminell aber
-  version = rootProject.libs.versions.minecraft.get() + "-" + when (name) {
-    "hero-api" -> "1.3.2"
-    "katara" -> "1.1.1"
-    "aang" -> "1.1.1"
-    "toph" -> "1.1.1"
-    "ffa-server" -> "1.3.21"
-    "datatracker" -> "1.0.18"
-    else -> version
-  } //+ "-SNAPSHOT"
-
   dependencies {
     "compileOnly"(rootProject.libs.annotations)
     "implementation"(rootProject.libs.serialization)
@@ -138,22 +127,6 @@ subprojects {
     disableAutoTargetJvm()
     toolchain.languageVersion.set(JavaLanguageVersion.of(21))
   }
-
-  /*tasks.withType<Checkstyle> {
-    maxErrors = 0
-    maxWarnings = 0
-    configFile = rootProject.file("checkstyle.xml")
-  }
-
-  extensions.configure<CheckstyleExtension> {
-    toolVersion = rootProject.libs.versions.checkstyleTools.get()
-  }
-
-  extensions.configure<SpotlessExtension> {
-    java {
-      licenseHeaderFile(rootProject.file("license_header.txt"))
-    }
-  }*/
 
   tasks.withType<Javadoc> {
     val options = options as? StandardJavadocDocletOptions ?: return@withType

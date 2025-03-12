@@ -1,3 +1,5 @@
+version = "1.3.21"
+
 val worldEditVersion: String by project
 
 val includeImplementation: Configuration by configurations.creating {
