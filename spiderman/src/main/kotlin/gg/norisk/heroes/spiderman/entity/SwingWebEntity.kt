@@ -60,14 +60,16 @@ class SwingWebEntity(entityType: EntityType<SwingWebEntity>, world: World) : Per
         owner?.addVelocity(pos.subtract(owner?.pos).multiply(0.1, 0.001, 0.1))
     }
 
-    override fun onEntityHit(entityHitResult: EntityHitResult?) = onHit()
+    override fun onEntityHit(entityHitResult: EntityHitResult) = onHit()
 
-    override fun onBlockHit(blockHitResult: BlockHitResult?) {
+    override fun onBlockHit(blockHitResult: BlockHitResult) {
         super.onBlockHit(blockHitResult)
         onHit()
     }
 
     override fun getGravity(): Double = 0.01
 
-    override fun canHit(entity: Entity?): Boolean = entity != owner
+    override fun canHit(entity: Entity): Boolean = entity != owner
+
+    override fun tryPickup(player: PlayerEntity): Boolean = false
 }
