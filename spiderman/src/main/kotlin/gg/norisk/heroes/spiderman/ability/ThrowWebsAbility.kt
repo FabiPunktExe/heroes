@@ -46,9 +46,7 @@ object ThrowWebsAbility : PressAbility("Throw webs") {
     override fun onStart(player: PlayerEntity, abilityScope: AbilityScope) {
         if (player.world is ServerWorld) {
             repeat(webAmount.getValue(player.uuid).toInt()) {
-                val web = FallingBlockEntity(EntityType.FALLING_BLOCK, player.world)
-                web.setPosition(player.eyePos)
-                web.block = Blocks.COBWEB.defaultState
+                val web = FallingBlockEntity(player.world, player.x, player.eyePos.y, player.z, Blocks.COBWEB.defaultState)
                 web.velocity = player.directionVector.multiply(0.6).addRandom(player.world.random, 0.3f)
                 player.world.spawnEntity(web)
             }
