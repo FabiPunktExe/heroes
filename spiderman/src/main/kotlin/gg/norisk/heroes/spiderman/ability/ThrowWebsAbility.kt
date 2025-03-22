@@ -6,11 +6,9 @@ import gg.norisk.heroes.common.ability.NumberProperty
 import gg.norisk.heroes.common.ability.operation.AddValueTotal
 import gg.norisk.heroes.common.hero.ability.AbilityScope
 import gg.norisk.heroes.common.hero.ability.implementation.PressAbility
+import gg.norisk.heroes.spiderman.entity.FallingCobwebEntity
 import io.wispforest.owo.ui.component.Components
 import io.wispforest.owo.ui.core.Component
-import net.minecraft.block.Blocks
-import net.minecraft.entity.EntityType
-import net.minecraft.entity.FallingBlockEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.Items
 import net.minecraft.server.world.ServerWorld
@@ -46,7 +44,7 @@ object ThrowWebsAbility : PressAbility("Throw webs") {
     override fun onStart(player: PlayerEntity, abilityScope: AbilityScope) {
         if (player.world is ServerWorld) {
             repeat(webAmount.getValue(player.uuid).toInt()) {
-                val web = FallingBlockEntity(player.world, player.x, player.eyePos.y, player.z, Blocks.COBWEB.defaultState)
+                val web = FallingCobwebEntity(player)
                 web.velocity = player.directionVector.multiply(0.6).addRandom(player.world.random, 0.3f)
                 player.world.spawnEntity(web)
             }
