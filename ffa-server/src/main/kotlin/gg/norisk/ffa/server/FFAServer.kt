@@ -9,6 +9,7 @@ import gg.norisk.ffa.server.mechanics.Bounty
 import gg.norisk.ffa.server.mechanics.CombatTag
 import gg.norisk.ffa.server.mechanics.KillManager
 import gg.norisk.ffa.server.mechanics.KitEditor
+import gg.norisk.ffa.server.mechanics.TeamNerf
 import gg.norisk.ffa.server.selector.SelectorServerManager
 import gg.norisk.ffa.server.world.MapPlacer
 import gg.norisk.ffa.server.world.WorldManager
@@ -35,6 +36,7 @@ object FFAServer : ModInitializer {
         CombatTag.init()
         KillManager.init()
         InvseeCommand.init()
+        TeamNerf.init()
     }
 
     const val FFA_KEY = "hero-ffa"
