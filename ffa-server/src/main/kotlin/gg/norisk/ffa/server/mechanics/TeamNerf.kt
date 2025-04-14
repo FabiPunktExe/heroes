@@ -28,6 +28,9 @@ object TeamNerf {
     }
 
     fun onAttack(player: PlayerEntity, target: PlayerEntity) {
+        if (player == target) {
+            return
+        }
         if (!hits.contains(player)) {
             hits[player] = mutableMapOf()
         }
@@ -35,12 +38,11 @@ object TeamNerf {
         hits[target] = System.currentTimeMillis()
     }
 
-    fun getDamageAgainst(player: PlayerEntity, target: PlayerEntity, damage: Float): Float {
+    fun getDamageAgainst(target: PlayerEntity, damage: Float): Float {
         val hits = hits[target] ?: mapOf()
         var teamSize = 0
         for (hit in hits) {
-            val hitPlayer = hit.key
-            if (hitPlayer != player) {
+            if (hit.value + 1000*10 < System.currentTimeMillis()) {
                 teamSize++
             }
         }

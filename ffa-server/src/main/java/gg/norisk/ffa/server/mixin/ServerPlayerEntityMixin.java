@@ -45,7 +45,7 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity {
     @Inject(method = "getDamageAgainst", at = @At("RETURN"), cancellable = true)
     public void onGetDamageAgainst(Entity target, float baseDamage, DamageSource damageSource, CallbackInfoReturnable<Float> cir) {
         if (target instanceof ServerPlayerEntity) {
-            cir.setReturnValue(TeamNerf.INSTANCE.getDamageAgainst(this, (PlayerEntity) target, cir.getReturnValue()));
+            cir.setReturnValue(TeamNerf.INSTANCE.getDamageAgainst((PlayerEntity) target, cir.getReturnValue()));
         }
     }
 }
