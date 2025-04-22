@@ -42,7 +42,7 @@ object TeamNerf {
         val hits = hits[target] ?: mapOf()
         var teamSize = 0
         for (hit in hits) {
-            if (hit.value + 1000*10 < System.currentTimeMillis()) {
+            if (hit.value + 1000*10 > System.currentTimeMillis()) {
                 teamSize++
             }
         }
